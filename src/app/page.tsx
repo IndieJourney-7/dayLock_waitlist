@@ -14,70 +14,125 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen bg-[#0B1A14] overflow-hidden">
-      {/* Subtle gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0B1A14] via-transparent to-[#0B1A14] pointer-events-none" />
+      {/* Animated Background Gradient */}
+      <div 
+        className="absolute inset-0 opacity-40"
+        style={{
+          background: 'radial-gradient(ellipse 80% 50% at 50% -20%, rgba(34, 197, 94, 0.15), transparent)',
+        }}
+      />
+      
+      {/* Subtle Grid Pattern */}
+      <div 
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2322C55E' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+        }}
+      />
+
+      {/* Left Door Silhouette */}
+      <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 opacity-20 hidden lg:block">
+        <svg width="200" height="400" viewBox="0 0 200 400" fill="none">
+          <rect x="20" y="20" width="160" height="360" rx="4" stroke="#22C55E" strokeWidth="2" fill="#0F1F17"/>
+          <rect x="40" y="50" width="120" height="140" rx="2" stroke="#22C55E" strokeWidth="1" fill="none"/>
+          <rect x="40" y="210" width="120" height="150" rx="2" stroke="#22C55E" strokeWidth="1" fill="none"/>
+          <circle cx="150" cy="200" r="8" stroke="#22C55E" strokeWidth="1.5" fill="#0F1F17"/>
+        </svg>
+      </div>
+
+      {/* Right Door Silhouette */}
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 opacity-20 hidden lg:block">
+        <svg width="200" height="400" viewBox="0 0 200 400" fill="none">
+          <rect x="20" y="20" width="160" height="360" rx="4" stroke="#22C55E" strokeWidth="2" fill="#0F1F17"/>
+          <rect x="40" y="50" width="120" height="140" rx="2" stroke="#22C55E" strokeWidth="1" fill="none"/>
+          <rect x="40" y="210" width="120" height="150" rx="2" stroke="#22C55E" strokeWidth="1" fill="none"/>
+          <circle cx="50" cy="200" r="8" stroke="#22C55E" strokeWidth="1.5" fill="#0F1F17"/>
+          {/* Lock icon */}
+          <g transform="translate(42, 215)">
+            <rect x="0" y="6" width="16" height="12" rx="2" stroke="#22C55E" strokeWidth="1" fill="none"/>
+            <path d="M3 6 V4 C3 1.5 5.5 0 8 0 C10.5 0 13 1.5 13 4 V6" stroke="#22C55E" strokeWidth="1" fill="none"/>
+          </g>
+        </svg>
+      </div>
+
+      {/* Floating Particles */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-1 h-1 bg-[#22C55E] rounded-full opacity-30 animate-pulse" style={{animationDelay: '0s', animationDuration: '3s'}}/>
+        <div className="absolute top-1/3 right-1/3 w-1.5 h-1.5 bg-[#22C55E] rounded-full opacity-20 animate-pulse" style={{animationDelay: '1s', animationDuration: '4s'}}/>
+        <div className="absolute top-2/3 left-1/3 w-1 h-1 bg-[#22C55E] rounded-full opacity-25 animate-pulse" style={{animationDelay: '2s', animationDuration: '3.5s'}}/>
+        <div className="absolute bottom-1/4 right-1/4 w-2 h-2 bg-[#22C55E] rounded-full opacity-15 animate-pulse" style={{animationDelay: '0.5s', animationDuration: '5s'}}/>
+        <div className="absolute top-1/2 left-[10%] w-1 h-1 bg-[#22C55E] rounded-full opacity-20 animate-pulse" style={{animationDelay: '1.5s', animationDuration: '4s'}}/>
+        <div className="absolute top-[15%] right-[15%] w-1.5 h-1.5 bg-[#22C55E] rounded-full opacity-25 animate-pulse" style={{animationDelay: '2.5s', animationDuration: '3s'}}/>
+      </div>
       
       {/* Main Content */}
-      <main className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-16">
-        <div className="max-w-2xl w-full flex flex-col items-center text-center space-y-8">
+      <main className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-12">
+        <div className="max-w-3xl w-full flex flex-col items-center text-center">
           
-          {/* Hero Image - Before Tagline */}
-          <div className="py-4">
+          {/* Headline - Above Image */}
+          <div className="mb-6 animate-fade-in">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1]">
+              <span className="text-white italic">Discipline Beats Motivation.</span>
+              <br />
+              <span className="text-[#22C55E]">One Room at a Time.</span>
+            </h1>
+          </div>
+
+          {/* Subheadline */}
+          <p className="text-lg sm:text-xl text-[#8BA898] mb-8 max-w-md animate-fade-in-delay">
+            Ready to lock your day? Join the waitlist for early access.
+          </p>
+
+          {/* Hero Image with Glow */}
+          <div className="relative mb-6 group">
+            {/* Glow behind image */}
+            <div className="absolute inset-0 bg-[#22C55E] opacity-20 blur-3xl scale-75 group-hover:opacity-30 transition-opacity duration-500"/>
             <Image
               src="/Assets/hero.png"
               alt="Daylock - Shield with clock and locked door"
-              width={280}
-              height={280}
-              className="mx-auto"
+              width={320}
+              height={320}
+              className="relative mx-auto drop-shadow-2xl transition-transform duration-500 hover:scale-105"
               priority
             />
           </div>
 
-          {/* Hero Section */}
-          <div className="space-y-4">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight italic">
-              Your Day. Locked.
-              <br />
-              One Room at a Time.
-            </h1>
-            
-            <p className="text-lg sm:text-xl text-[#6B8F7A] max-w-lg mx-auto leading-relaxed">
-              No to-do lists.<br />
-              No motivation hacks.<br />
-              Just structure, discipline, and proof.
-            </p>
-          </div>
-
-          {/* Brand Name */}
-          <h2 className="text-4xl sm:text-5xl font-bold text-white tracking-wide">
-            Daylock
+          {/* Brand Name with Glow */}
+          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white tracking-wider mb-10 relative">
+            <span className="relative">
+              Daylock
+              <span className="absolute inset-0 blur-lg bg-gradient-to-r from-transparent via-[#22C55E] to-transparent opacity-20"/>
+            </span>
           </h2>
 
           {/* Waitlist Form Section */}
-          <div className="w-full flex flex-col items-center space-y-6 pt-4">
+          <div className="w-full max-w-lg flex flex-col items-center space-y-8 mb-8">
             <WaitlistForm onSuccess={handleSuccess} />
             
             {/* Social Proof */}
-            <div className="pt-2">
-              <RefreshableWaitlistCount refreshKey={refreshKey} />
-            </div>
+            <RefreshableWaitlistCount refreshKey={refreshKey} />
           </div>
 
           {/* Trust Line */}
-          <div className="pt-6">
-            <p className="text-sm text-[#6B8F7A] opacity-70">
-              We respect your privacy. Unsubscribe anytime.
-            </p>
-          </div>
+          <p className="text-sm text-[#6B8F7A] opacity-60">
+            We respect your privacy. Unsubscribe anytime.
+          </p>
         </div>
       </main>
 
-      {/* Subtle vignette effect */}
+      {/* Bottom Vignette */}
       <div 
         className="fixed inset-0 pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse at center, transparent 0%, #0B1A14 100%)',
-          opacity: 0.4
+          background: 'radial-gradient(ellipse 100% 100% at 50% 100%, rgba(11, 26, 20, 0.8) 0%, transparent 50%)',
+        }}
+      />
+
+      {/* Top Vignette */}
+      <div 
+        className="fixed inset-0 pointer-events-none"
+        style={{
+          background: 'radial-gradient(ellipse 100% 50% at 50% 0%, rgba(11, 26, 20, 0.6) 0%, transparent 50%)',
         }}
       />
     </div>
