@@ -88,7 +88,7 @@ export default function Home() {
             {/* Glow behind image */}
             <div className="absolute inset-0 bg-[#22C55E] opacity-20 blur-3xl scale-75 group-hover:opacity-30 transition-opacity duration-500"/>
             <Image
-              src="/Assets/hero.png"
+              src="/Assets/heroimg.png"
               alt="Daylock - Shield with clock and locked door"
               width={320}
               height={320}
