@@ -90,9 +90,9 @@ export default function Home() {
             <Image
               src="/Assets/heroimg.png"
               alt="Daylock - Shield with clock and locked door"
-              width={200}
-              height={200}
-              className="relative mx-auto drop-shadow-2xl transition-transform duration-500 hover:scale-105 sm:w-[240px] sm:h-[240px]"
+              width={320}
+              height={320}
+              className="relative mx-auto drop-shadow-2xl transition-transform duration-500 hover:scale-105"
               priority
             />
           </div>
