@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0B1A14;
+  --background-secondary: #0F1F17;
+  --foreground: #ffffff;
+  --foreground-muted: #6B8F7A;
+  --accent: #22C55E;
+  --accent-glow: rgba(34, 197, 94, 0.3);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-background-secondary: var(--background-secondary);
+  --color-foreground: var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-accent: var(--accent);
+  --color-accent-glow: var(--accent-glow);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  min-height: 100vh;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--background);
+}
