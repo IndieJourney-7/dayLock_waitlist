@@ -97,14 +97,6 @@ export default function Home() {
             />
           </div>
 
-          {/* Brand Name with Glow */}
-          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white tracking-wider mb-10 relative">
-            <span className="relative">
-              Daylock
-              <span className="absolute inset-0 blur-lg bg-gradient-to-r from-transparent via-[#22C55E] to-transparent opacity-20"/>
-            </span>
-          </h2>
-
           {/* Waitlist Form Section */}
           <div className="w-full max-w-lg flex flex-col items-center space-y-8 mb-8">
             <WaitlistForm onSuccess={handleSuccess} />
