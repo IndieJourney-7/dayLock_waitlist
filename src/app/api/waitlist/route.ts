@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase';
+import { getSupabase } from '@/lib/supabase';
 
 export async function POST(request: Request) {
   try {
@@ -11,6 +11,8 @@ export async function POST(request: Request) {
         { status: 400 }
       );
     }
+
+    const supabase = getSupabase();
 
     // Check if email already exists
     const { data: existing } = await supabase

@@ -1,8 +1,9 @@
 import { NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase';
+import { getSupabase } from '@/lib/supabase';
 
 export async function GET() {
   try {
+    const supabase = getSupabase();
     const { count, error } = await supabase
       .from('daylock_waitlist')
       .select('*', { count: 'exact', head: true });
