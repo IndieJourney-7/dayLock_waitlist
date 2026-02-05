@@ -66,12 +66,12 @@ export default function Home() {
       </div>
       
       {/* Main Content */}
-      <main className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-12">
-        <div className="max-w-3xl w-full flex flex-col items-center text-center">
+      <main className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 py-6 sm:py-8">
+        <div className="max-w-2xl w-full flex flex-col items-center text-center">
           
           {/* Headline - Above Image */}
-          <div className="mb-6 animate-fade-in">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1]">
+          <div className="mb-3 sm:mb-4 animate-fade-in">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-[1.15]">
               <span className="text-white italic">Discipline Beats Motivation.</span>
               <br />
               <span className="text-[#22C55E]">One Room at a Time.</span>
@@ -79,26 +79,26 @@ export default function Home() {
           </div>
 
           {/* Subheadline */}
-          <p className="text-lg sm:text-xl text-[#8BA898] mb-8 max-w-md animate-fade-in-delay">
+          <p className="text-base sm:text-lg text-[#8BA898] mb-4 sm:mb-5 max-w-sm animate-fade-in-delay">
             Ready to lock your day? Join the waitlist for early access.
           </p>
 
           {/* Hero Image with Glow */}
-          <div className="relative mb-6 group">
+          <div className="relative mb-4 sm:mb-5 group">
             {/* Glow behind image */}
             <div className="absolute inset-0 bg-[#22C55E] opacity-20 blur-3xl scale-75 group-hover:opacity-30 transition-opacity duration-500"/>
             <Image
               src="/Assets/heroimg.png"
               alt="Daylock - Shield with clock and locked door"
-              width={320}
-              height={320}
-              className="relative mx-auto drop-shadow-2xl transition-transform duration-500 hover:scale-105"
+              width={200}
+              height={200}
+              className="relative mx-auto drop-shadow-2xl transition-transform duration-500 hover:scale-105 sm:w-[240px] sm:h-[240px]"
               priority
             />
           </div>
 
           {/* Waitlist Form Section */}
-          <div className="w-full max-w-lg flex flex-col items-center space-y-8 mb-8">
+          <div className="w-full max-w-md flex flex-col items-center space-y-4 sm:space-y-5 mb-4">
             <WaitlistForm onSuccess={handleSuccess} />
             
             {/* Social Proof */}
@@ -106,7 +106,7 @@ export default function Home() {
           </div>
 
           {/* Trust Line */}
-          <p className="text-sm text-[#6B8F7A] opacity-60">
+          <p className="text-xs sm:text-sm text-[#6B8F7A] opacity-60">
             We respect your privacy. Unsubscribe anytime.
           </p>
         </div>

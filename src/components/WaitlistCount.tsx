@@ -30,10 +30,10 @@ export default function WaitlistCount() {
     );
   }
 
-  const displayCount = count + 1284;
+  const displayCount = count;
 
   return (
-    <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-[#0F1F17]/60 border border-[#1a2f24] backdrop-blur-sm">
+    <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-[#0F1F17]/60 border border-[#1a2f24] backdrop-blur-sm">
       {/* Animated indicator */}
       <div className="relative flex items-center justify-center">
         <div className="w-2.5 h-2.5 rounded-full bg-[#22C55E]" />
@@ -91,10 +91,10 @@ export function RefreshableWaitlistCount({ refreshKey }: { refreshKey: number })
     );
   }
 
-  const displayCount = count + 1284;
+  const displayCount = count;
 
   return (
-    <div className={`inline-flex items-center gap-3 px-6 py-3 rounded-full bg-[#0F1F17]/60 border border-[#1a2f24] backdrop-blur-sm transition-all duration-300 ${isUpdating ? 'scale-105 border-[#22C55E]/50' : ''}`}>
+    <div className={`inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-[#0F1F17]/60 border border-[#1a2f24] backdrop-blur-sm transition-all duration-300 ${isUpdating ? 'scale-105 border-[#22C55E]/50' : ''}`}>
       {/* Animated indicator */}
       <div className="relative flex items-center justify-center">
         <div className="w-2.5 h-2.5 rounded-full bg-[#22C55E]" />
