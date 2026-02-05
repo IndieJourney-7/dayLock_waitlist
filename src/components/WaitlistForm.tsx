@@ -1,11 +1,13 @@
 'use client';
 
 import { useState } from 'react';
+import SuccessAnimation from './SuccessAnimation';
 
 export default function WaitlistForm({ onSuccess }: { onSuccess?: () => void }) {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [message, setMessage] = useState('');
+  const [showAnimation, setShowAnimation] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -27,7 +29,7 @@ export default function WaitlistForm({ onSuccess }: { onSuccess?: () => void }) 
       }
 
       setStatus('success');
-      setMessage('You\'re in. We\'ll be watching.');
+      setShowAnimation(true);
       setEmail('');
       onSuccess?.();
     } catch {
@@ -36,8 +38,16 @@ export default function WaitlistForm({ onSuccess }: { onSuccess?: () => void }) 
     }
   };
 
+  const handleAnimationComplete = () => {
+    setShowAnimation(false);
+    setMessage('You\'re in! Check your inbox soon.');
+  };
+
   return (
-    <form onSubmit={handleSubmit} className="w-full">
+    <>
+      {showAnimation && <SuccessAnimation onComplete={handleAnimationComplete} />}
+      
+      <form onSubmit={handleSubmit} className="w-full">
       {/* Form Container with subtle border glow */}
       <div className="relative p-1 rounded-2xl bg-gradient-to-r from-[#1a2f24] via-[#22C55E]/20 to-[#1a2f24]">
         <div className="flex flex-col sm:flex-row gap-3 p-4 bg-[#0B1A14] rounded-xl">
@@ -99,5 +109,6 @@ export default function WaitlistForm({ onSuccess }: { onSuccess?: () => void }) 
         </p>
       )}
     </form>
+    </>
   );
 }
